@@ -47,3 +47,7 @@ input:focus {
 .blue-text {
     color: #2980b9
 }
+
+pre {
+    margin: 0;
+}
