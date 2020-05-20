@@ -3,6 +3,8 @@
     color: whitesmoke;
     font-size: 18px;
     font-family: monospace, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -30,10 +32,9 @@ body {
 }
 
 input {
-    width: 100%;
     border: none;
-    background-color: #2c3e50;
-    padding: 10px 5px;
+    background-color: #333333;
+    padding: 2px 5px;
 }
 
 input:focus {
@@ -48,6 +49,11 @@ input:focus {
     color: #2980b9
 }
 
-pre {
-    margin: 0;
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    flex: 1;
 }
