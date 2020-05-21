@@ -30,10 +30,14 @@ class Organization extends observable {
 
     }
     del() {
+        const deleted = []
         for (let child of this.children) {
-            child.del()
+            const name = child.del()
+            deleted.push(name)
         }
+        deleted.push(this.getName())
         delete this
+        return deleted.join(', ')
     }
 }
 

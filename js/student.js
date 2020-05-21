@@ -18,7 +18,9 @@ class Student extends observer {
         printToScreen(space + this.name)
     }
     del() {
+        const name = this.getName()
         delete this
+        return name
     }
     showRecent() {}
 }

@@ -6,14 +6,15 @@ class Delete {
 
     execute(name) {
         const children = this.current.getChild()
-
+        const deleted = []
         children.forEach(element => {
             if (element.getName() == name) {
                 this.current.removeComponent(element)
-                element.del()
+                const name = element.del()
+                deleted.push(name)
             }
         });
-
+        return deleted.length > 0 ? deleted.join(', ') + ' deleted' : ''
     }
 }
 
