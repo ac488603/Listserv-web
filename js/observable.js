@@ -1,6 +1,8 @@
-class observable {
+import component from "./component.js";
+
+class observable extends component {
     constructor(name) {
-        this.name = name
+        super(name)
     }
 
     addSubscriber(observer) {}
@@ -8,9 +10,6 @@ class observable {
     notify() {}
     getMessage() {
         return this.message
-    }
-    getName() {
-        return this.name
     }
 }
 

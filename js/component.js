@@ -1,8 +1,9 @@
-import observer from './observer.js';
-class component extends observer {
+class component {
     constructor(name) {
-        super(name)
         this.name = name
+    }
+    getName() {
+        return this.name
     }
     print(spaces = " ") {}
     del() {}

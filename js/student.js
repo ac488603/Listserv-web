@@ -3,8 +3,9 @@ import observable from './observable.js'
 import {
     printToScreen
 } from './utils.js'
+import observer from './observer.js'
 
-class Student extends component {
+class Student extends observer {
     constructor(name) {
         super(name)
     }
@@ -17,7 +18,7 @@ class Student extends component {
         printToScreen(space + this.name)
     }
     del() {
-
+        delete this
     }
     showRecent() {}
 }

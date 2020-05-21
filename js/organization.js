@@ -2,8 +2,9 @@ import component from "./component.js";
 import {
     printToScreen
 } from './utils.js'
+import observable from "./observable.js";
 
-class Organization extends component {
+class Organization extends observable {
 
     constructor(name) {
         super(name)
@@ -28,7 +29,12 @@ class Organization extends component {
         })
 
     }
-    del() {}
+    del() {
+        for (let child of this.children) {
+            child.del()
+        }
+        delete this
+    }
 }
 
 export default Organization;
