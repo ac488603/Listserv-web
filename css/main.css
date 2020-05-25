@@ -11,6 +11,13 @@ body {
     background-color: #7f8c8d;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div>h1 {
+    font-size: 32px;
+    text-align: center;
 }
 
 #container {
