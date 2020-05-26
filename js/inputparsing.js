@@ -18,12 +18,14 @@ function inputHandler(e, display) {
     if (e.keyCode == 13) {
         const text = e.target.value
         const commandString = text.split(' ')
-
+        let statusMessage = ''
         const command = commandString[0].toLowerCase()
         const requestedCommand = commandMap[command];
+        const path = commandMap.currRef.current.getName()
+
         switch (command) {
             case 'ls':
-                display.insertBefore(addCommand(text, commandMap.currRef.current.getName()), document.querySelector('.input-container.active'))
+                display.insertBefore(addCommand(text, path), document.querySelector('.input-container.active'))
                 e.target.value = ''
                 requestedCommand() //recursive print call on data structure
                 break;
@@ -31,12 +33,15 @@ function inputHandler(e, display) {
                 requestedCommand(display) // clears screen
                 display.querySelector('input').focus()
                 break;
+            case 'notify':
+                statusMessage = requestedCommand.execute(commandString)
+                refresh(display, statusMessage, path)
+                break;
             case 'create':
             case 'mkorg':
             case 'del':
             case 'cd':
-                const path = commandMap.currRef.current.getName()
-                const statusMessage = requestedCommand.execute(commandString[1])
+                statusMessage = requestedCommand.execute(commandString[1])
                 refresh(display, statusMessage, path)
                 break;
             default:
@@ -45,7 +50,6 @@ function inputHandler(e, display) {
         document.querySelector('.input-container.active pre').textContent = `~/${commandMap.currRef.current.getName()}$` // update path on active input
         display.scrollTop = display.scrollHeight //scroll element to the bottom
     }
-
 }
 
 
