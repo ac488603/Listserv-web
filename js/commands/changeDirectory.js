@@ -9,8 +9,6 @@ class changeDirectory {
     }
 
     execute(name) {
-        console.log('parent:', this.parent)
-        console.log('current:', this.currRef.current)
         if (name == '..') {
             this.currRef.current = this.parent
             if (this.root.getName() == this.parent.getName()) return //check if the root is the parent

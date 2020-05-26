@@ -15,7 +15,7 @@ import changeDirectory from './commands/changeDirectory.js'
 const current = {
     current: orgs
 };
-print.current = current
+print.current = current //set property on print function
 
 
 //create commands
@@ -37,15 +37,14 @@ function clear(parentElement) {
 }
 
 const commandMap = {
-    'cd': '',
     'ls': print,
-    'rm': 'remove',
-    'new': 'create',
     'clear': clear,
     'create': createCommand,
     'mkorg': mkorgCommand,
     'del': DeleteCommand,
     'cd': changeDirectoryCommand
 }
+
+commandMap.currRef = current
 
 export default commandMap;

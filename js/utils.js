@@ -52,6 +52,7 @@ function print() {
     console.log(print.current)
     print.current.current.print()
 }
+
 export {
     addCommand,
     printToScreen,
