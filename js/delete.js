@@ -1,15 +1,15 @@
 class Delete {
 
     constructor(currentPosition) {
-        this.current = currentPosition
+        this.currRef = currentPosition
     }
 
     execute(name) {
-        const children = this.current.getChild()
+        const children = this.currRef.current.getChild()
         const deleted = []
         children.forEach(element => {
             if (element.getName() == name) {
-                this.current.removeComponent(element)
+                this.currRef.current.removeComponent(element)
                 const name = element.del()
                 deleted.push(name)
             }

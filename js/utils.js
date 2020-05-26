@@ -35,7 +35,6 @@ function printToScreen(text) {
     const inputContainer = document.querySelector('.input-container.active')
     textDiv.appendChild(textNode)
     commands.insertBefore(textDiv, inputContainer)
-    commands.scrollTop = commands.scrollHeight //scroll element to the bottom
 }
 
 function refresh(display, text, path = '') {
@@ -48,9 +47,15 @@ function refresh(display, text, path = '') {
     display.insertBefore(spanResponseMessage, inputContainer)
     display.querySelector('.active input').value = ''
 }
+
+function print() {
+    console.log(print.current)
+    print.current.current.print()
+}
 export {
     addCommand,
     printToScreen,
     inputWithPath,
-    refresh
+    refresh,
+    print
 };

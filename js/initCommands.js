@@ -1,5 +1,6 @@
 import {
-    inputWithPath
+    inputWithPath,
+    print
 } from './utils.js'
 
 import inputHandler from './inputparsing.js'
@@ -9,14 +10,19 @@ import orgs from './setupOrganization.js'
 import Create from './create.js'
 import Mkorg from './makeOrganization.js'
 import Delete from './delete.js'
+import changeDirectory from './commands/changeDirectory.js'
 
-
+const current = {
+    current: orgs
+};
+print.current = current
 
 
 //create commands
-const createCommand = new Create(orgs)
-const mkorgCommand = new Mkorg(orgs)
-const DeleteCommand = new Delete(orgs)
+const createCommand = new Create(current)
+const mkorgCommand = new Mkorg(current)
+const DeleteCommand = new Delete(current)
+const changeDirectoryCommand = new changeDirectory(orgs, orgs, current)
 
 function clear(parentElement) {
     const children = parentElement.children
@@ -32,15 +38,14 @@ function clear(parentElement) {
 
 const commandMap = {
     'cd': '',
-    'ls': (orgs) => {
-        orgs.print()
-    },
+    'ls': print,
     'rm': 'remove',
     'new': 'create',
     'clear': clear,
     'create': createCommand,
     'mkorg': mkorgCommand,
-    'del': DeleteCommand
+    'del': DeleteCommand,
+    'cd': changeDirectoryCommand
 }
 
 export default commandMap;

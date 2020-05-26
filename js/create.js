@@ -2,12 +2,12 @@ import Student from "./student.js"
 
 class Create {
     constructor(currentPosition) {
-        this.current = currentPosition
+        this.currRef = currentPosition
     }
 
     execute(name) {
-        this.current.addComponent(new Student(name))
-        return `new student(${name}) added to ${this.current.getName()} Organization.`
+        this.currRef.current.addComponent(new Student(name))
+        return `new student(${name}) added to ${this.currRef.current.getName()} Organization.`
     }
 }
 
