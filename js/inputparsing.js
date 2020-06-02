@@ -34,6 +34,7 @@ function inputHandler(e, display) {
                 display.querySelector('input').focus()
                 break;
             case 'notify':
+            case 'subscribe':
                 statusMessage = requestedCommand.execute(commandString)
                 refresh(display, statusMessage, path)
                 break;

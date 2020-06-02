@@ -13,8 +13,9 @@ import Mkorg from './makeOrganization.js'
 import Delete from './delete.js'
 import changeDirectory from './commands/changeDirectory.js'
 import Notify from './commands/notify.js'
+import Subscribe from './commands/subscribe.js'
 
-
+const root = orgs;
 const current = {
     current: orgs
 };
@@ -31,6 +32,7 @@ const mkorgCommand = new Mkorg(current)
 const DeleteCommand = new Delete(current)
 const changeDirectoryCommand = new changeDirectory(orgs, orgs, current)
 const notifyCommand = new Notify(lists)
+const subscribeCommand = new Subscribe(lists, root)
 
 function clear(parentElement) {
     const children = parentElement.children
@@ -51,7 +53,8 @@ const commandMap = {
     'mkorg': mkorgCommand,
     'del': DeleteCommand,
     'cd': changeDirectoryCommand,
-    'notify': notifyCommand
+    'notify': notifyCommand,
+    'subscribe': subscribeCommand
 }
 
 commandMap.currRef = current

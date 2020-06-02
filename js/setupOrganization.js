@@ -1,6 +1,6 @@
 import Organization from './organization.js'
 import Student from './student.js'
-const orgs = new Organization('Fresno State'); // root of data structure
+const orgs = new Organization('FresnoState'); // root of data structure
 
 //list setup
 //organizations
