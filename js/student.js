@@ -8,10 +8,11 @@ import observer from './observer.js'
 class Student extends observer {
     constructor(name) {
         super(name)
+        this.subscribed = {}
     }
     update(observable) {
-        const message = observable.geMessage()
-        const organization = observable.getName()
+        const message = observable.getMessage()
+        const organization = observable.getName().toLowerCase()
         this.subscribed[organization] = message
     }
     print(space = " ") {
