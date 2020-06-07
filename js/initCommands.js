@@ -14,7 +14,7 @@ import Delete from './delete.js'
 import changeDirectory from './commands/changeDirectory.js'
 import Notify from './commands/notify.js'
 import Subscribe from './commands/subscribe.js'
-
+import Unsubscribe from './commands/unsubscribe.js'
 const root = orgs;
 const current = {
     current: orgs
@@ -33,6 +33,7 @@ const DeleteCommand = new Delete(current)
 const changeDirectoryCommand = new changeDirectory(orgs, orgs, current)
 const notifyCommand = new Notify(lists)
 const subscribeCommand = new Subscribe(lists, root)
+const unsubscribeCommand = new Unsubscribe(lists, root)
 
 function clear(parentElement) {
     const children = parentElement.children
@@ -54,7 +55,8 @@ const commandMap = {
     'del': DeleteCommand,
     'cd': changeDirectoryCommand,
     'notify': notifyCommand,
-    'subscribe': subscribeCommand
+    'subscribe': subscribeCommand,
+    'unsubscribe': unsubscribeCommand
 }
 
 commandMap.currRef = current

@@ -35,6 +35,7 @@ function inputHandler(e, display) {
                 break;
             case 'notify':
             case 'subscribe':
+            case 'unsubscribe':
                 statusMessage = requestedCommand.execute(commandString)
                 refresh(display, statusMessage, path)
                 break;
