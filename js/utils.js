@@ -53,10 +53,28 @@ function print() {
     print.current.current.print()
 }
 
+function drawTree(tree) {
+
+    if (tree.children) {
+        const ulElement = document.createElement('ul')
+        const lhElement = document.createElement('lh')
+        lhElement.textContent = tree.getName()
+        ulElement.appendChild(lhElement)
+        const listElements = tree.children.map(element => drawTree(element)) //recursive call
+        ulElement.append(...listElements)
+        return ulElement
+    }
+
+    const listElement = document.createElement('li')
+    listElement.textContent = tree.getName()
+    return listElement
+}
+
 export {
     addCommand,
     printToScreen,
     inputWithPath,
     refresh,
-    print
+    print,
+    drawTree
 };

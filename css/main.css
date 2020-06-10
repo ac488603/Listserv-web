@@ -64,3 +64,19 @@ input:focus {
 .input-container input {
     flex: 1;
 }
+
+#tree ul {
+    margin-left: 25px;
+}
+
+#tree li {
+    list-style: none;
+    margin-left: 25px;
+    color: goldenrod
+}
+
+#tree lh {
+    font-size: 18px;
+    font-weight: bolder;
+    color: rebeccapurple;
+}

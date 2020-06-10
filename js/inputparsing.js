@@ -4,6 +4,11 @@ import {
     refresh
 } from './utils.js'
 
+import {
+    drawTree
+} from './utils.js'
+
+
 import commandMap from './initCommands.js'
 
 const commands = document.getElementById('commands');
@@ -13,6 +18,8 @@ input.addEventListener('keydown', (e) => {
     inputHandler(e, commands)
 })
 input.focus()
+
+
 
 function inputHandler(e, display) {
     if (e.keyCode == 13) {
@@ -51,6 +58,8 @@ function inputHandler(e, display) {
         }
         document.querySelector('.input-container.active pre').textContent = `~/${commandMap.currRef.current.getName()}$` // update path on active input
         display.scrollTop = display.scrollHeight //scroll element to the bottom
+        document.getElementById('tree').innerHTML = ''
+        document.getElementById('tree').appendChild(drawTree(commandMap.currRef.current))
     }
 }
 
