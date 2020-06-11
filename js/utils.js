@@ -70,11 +70,47 @@ function drawTree(tree) {
     return listElement
 }
 
+function drawLists(lists) {
+    const keys = Object.keys(lists)
+
+    function constructDOMList(name, message) {
+        const nameElement = document.querySelector(`#${name}`)
+        if (nameElement) {
+            if (message !== undefined && nameElement.lastChild.textContent !== message) {
+                const li = document.createElement('li')
+                li.textContent = message
+                nameElement.appendChild(li)
+            }
+        } else {
+            const listElement = document.createElement('ul')
+            const listheadElement = document.createElement('lh')
+            listheadElement.textContent = name
+            listElement.appendChild(listheadElement)
+            if (message !== undefined) {
+                const li = document.createElement('li')
+                li.textContent = message
+                listElement.appendChild(li)
+            }
+            listElement.setAttribute('id', `${name}`)
+            document.querySelector('#lists').appendChild(listElement)
+        }
+
+    }
+
+    for (let key of keys) {
+        const list = lists[key]
+        const name = list.getName()
+        const message = list.getMessage()
+        constructDOMList(name, message)
+    }
+}
+
 export {
     addCommand,
     printToScreen,
     inputWithPath,
     refresh,
     print,
-    drawTree
+    drawTree,
+    drawLists
 };

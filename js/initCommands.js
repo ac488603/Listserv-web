@@ -60,5 +60,6 @@ const commandMap = {
 }
 
 commandMap.currRef = current
+commandMap.listRef = lists
 
 export default commandMap;

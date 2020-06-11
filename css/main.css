@@ -61,22 +61,46 @@ input:focus {
     align-items: center;
 }
 
+width: 700px;
+
 .input-container input {
     flex: 1;
 }
 
-#tree ul {
+#tree-container {
+    display: flex;
+    width: 700px;
+}
+
+#tree {
+    flex: 1;
+}
+
+#lists {
+    flex: 1;
+}
+
+#tree ul,
+#lists ul {
+    margin-left: 25px;
+}
+
+#tree li,
+#lists li {
+    list-style: none;
     margin-left: 25px;
 }
 
 #tree li {
-    list-style: none;
-    margin-left: 25px;
     color: goldenrod
 }
 
-#tree lh {
+#tree lh,
+#lists lh {
     font-size: 18px;
     font-weight: bolder;
+}
+
+#tree lh {
     color: rebeccapurple;
 }

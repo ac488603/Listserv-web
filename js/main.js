@@ -1,10 +1,13 @@
 import inputHandler from './inputparsing.js'
 import {
-    drawTree
+    drawTree,
+    drawLists
 } from './utils.js'
 
-import orgs from './setupOrganization.js'
+import commandMap from './initCommands.js'
 
 
-const treeDom = drawTree(orgs)
+const treeDom = drawTree(commandMap.currRef.current)
 document.getElementById('tree').appendChild(treeDom)
+
+drawLists(commandMap.listRef)

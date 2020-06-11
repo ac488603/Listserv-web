@@ -5,7 +5,8 @@ import {
 } from './utils.js'
 
 import {
-    drawTree
+    drawTree,
+    drawLists
 } from './utils.js'
 
 
@@ -45,6 +46,7 @@ function inputHandler(e, display) {
             case 'unsubscribe':
                 statusMessage = requestedCommand.execute(commandString)
                 refresh(display, statusMessage, path)
+                drawLists(commandMap.listRef)
                 break;
             case 'create':
             case 'mkorg':
