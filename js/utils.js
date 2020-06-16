@@ -67,6 +67,13 @@ function drawTree(tree) {
 
     const listElement = document.createElement('li')
     listElement.textContent = tree.getName()
+    const divElement = document.createElement('div')
+    for (let key of Object.keys(tree.subscribed)) {
+        const liElement = document.createElement('li')
+        liElement.textContent = `${key} - ${tree.subscribed[key]} `
+        divElement.appendChild(liElement)
+    }
+    listElement.appendChild(divElement)
     return listElement
 }
 

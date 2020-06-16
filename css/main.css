@@ -15,6 +15,12 @@ body {
     flex-direction: column;
 }
 
+header {
+    display: flex;
+    padding: 20px 20px;
+    width: 100%;
+}
+
 div>h1 {
     font-size: 32px;
     text-align: center;
@@ -92,7 +98,10 @@ width: 700px;
 }
 
 #tree li {
-    color: goldenrod
+    color: goldenrod;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
 #tree lh,
@@ -103,4 +112,27 @@ width: 700px;
 
 #tree lh {
     color: rebeccapurple;
+}
+
+#command-list table {
+    text-align: left;
+}
+
+#command-list table {
+    border-spacing: 35px 10px;
+    border-collapse: collapse;
+}
+
+#command-list table td:not(first-child) {
+    padding: 10px 25px;
+}
+
+#command-list table tr:nth-child(even) {
+    background-color: cadetblue;
+
+}
+
+body {
+    min-width: 900px;
+    overflow: auto;
 }
