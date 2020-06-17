@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Listserv Command Reference</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <div>
       <header>
         <a href="index.html"><h2>Application</h2></a>
       </header>
@@ -16,66 +16,109 @@
         <table>
           <thead>
             <tr>
-              <th>
-                Command
-              </th>
-              <th>
-                Format
-              </th>
-              <th>
-                Description
-              </th>
+              <th>Command</th>
+              <th>Argumments</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>ls</td>
+              <td><a href="#ls">ls</a></td>
               <td></td>
-              <td>print data structure to console</td>
             </tr>
             <tr>
-              <td>clear</td>
+              <td><a href="#clear">clear</a></td>
               <td></td>
-              <td>clear console output</td>
             </tr>
             <tr>
-              <td>create</td>
+              <td><a href="#create">create</a></td>
               <td>&lt;student name&gt;</td>
-              <td>reate new student</td>
             </tr>
             <tr>
-              <td>mkorg</td>
+              <td><a href="#mkorg">mkorg</a></td>
               <td>&lt;organization name&gt;</td>
-              <td>create new organization</td>
             </tr>
             <tr>
-              <td>del</td>
+              <td><a href="#del">del</a></td>
               <td>&lt;name&gt;</td>
-              <td>delete student or organization</td>
             </tr>
             <tr>
-              <td>cd</td>
+              <td><a href="#cd">cd</a></td>
               <td>&lt;organization name/..&gt;</td>
-              <td>changes current organization</td>
             </tr>
             <tr>
-              <td>subscribe</td>
+              <td><a href="#subscribe">subscribe</a>
+              </td>
               <td>&lt;list&gt; &lt;organization/student&gt;</td>
-              <td>subscribes student or org to list</td>
             </tr>
             <tr>
-              <td>unsubscribe</td>
+              <td><a href="#unsubscribe">unsubscribe</a></td>
               <td>&lt;list&gt; &lt;organization/student&gt;</td>
-              <td>unsubscribes student or org from list</td>
             </tr>
             <tr>
-              <td>notify</td>
+              <td><a href="#notify">notify</a></td>
               <td>&lt;list&gt; &lt;message&gt;</td>
-              <td>notifies all users subscribed to list</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <div id="command-details">
+        <div name="ls" id="ls">
+          <h3>ls</h3>
+          <p>print the data structure to the terminal</p>
+        </div>
+        <div name="clear" id="clear">
+          <h3>clear</h3>
+          <p>clears terminal of all text</p>
+        </div>
+        <div name="create" id="create">
+          <h3>
+            create <span class="argument-color">&lt;student name&gt;</span>
+          </h3>
+          <p>creates new student under current organization</p>
+        </div>
+        <div name="mkorg" id="mkorg">
+          <h3>
+            mkorg <span class="argument-color">&lt;organization name&gt;</span>
+          </h3>
+          <p>creates new organization under new organization</p>
+        </div>
+        <div name="notify" id="notify">
+            <h3>
+              notify
+              <span class="argument-color"
+                >&lt;list name&gt; &lt;message&gt;</span
+              >
+            </h3>
+            <p>sends message to all components subscribed to list</p>
+          </div>
+        <div name="cd" id="cd"> 
+            <h3>
+              cd
+              <span class="argument-color"
+                >&lt;organization name&gt;</span
+              >
+            </h3>
+            <p>changes the current organization</p>
+        </div>
+        <div name="subscribe" id="subscribe">
+            <h3>
+              subscribe
+              <span class="argument-color"
+                >&lt;list name&gt; &lt;organization or student name&gt;</span
+              >
+            </h3>
+            <p>subscribes the student or organization to the list</p>
+          </div>
+          <div name="unsubscribe" id="unsubscribe">
+            <h3>
+              unsubscribe
+              <span class="argument-color"
+                >&lt;list name&gt; &lt;organization or student name&gt;</span
+              >
+            </h3>
+            <p>unsubscribes the student or organization to the list</p>
+          </div>
+        </div>
     </div>
   </body>
 </html>
