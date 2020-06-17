@@ -53,14 +53,15 @@ function print() {
     print.current.current.print()
 }
 
-function drawTree(tree) {
+function drawTree(tree, level) {
 
     if (tree.children) {
         const ulElement = document.createElement('ul')
         const lhElement = document.createElement('lh')
         lhElement.textContent = tree.getName()
         ulElement.appendChild(lhElement)
-        const listElements = tree.children.map(element => drawTree(element)) //recursive call
+        ulElement.setAttribute('level', level)
+        const listElements = tree.children.map(element => drawTree(element, level + 1)) //recursive call
         ulElement.append(...listElements)
         return ulElement
     }

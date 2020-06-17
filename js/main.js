@@ -7,7 +7,7 @@ import {
 import commandMap from './initCommands.js'
 
 
-const treeDom = drawTree(commandMap.currRef.current)
+const treeDom = drawTree(commandMap.currRef.current, 0)
 document.getElementById('tree').appendChild(treeDom)
 
 drawLists(commandMap.listRef)

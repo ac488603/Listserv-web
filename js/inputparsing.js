@@ -61,7 +61,8 @@ function inputHandler(e, display) {
         document.querySelector('.input-container.active pre').textContent = `~/${commandMap.currRef.current.getName()}$` // update path on active input
         display.scrollTop = display.scrollHeight //scroll element to the bottom
         document.getElementById('tree').innerHTML = ''
-        document.getElementById('tree').appendChild(drawTree(commandMap.currRef.current))
+        const treeElement = drawTree(commandMap.currRef.current, 0)
+        document.getElementById('tree').appendChild(treeElement)
     }
 }
 

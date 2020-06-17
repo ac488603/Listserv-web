@@ -7,6 +7,13 @@
     margin: 0;
 }
 
+pre,
+input,
+span,
+div {
+    color: white;
+}
+
 body {
     background-color: #ecf0f1;
     display: flex;
@@ -34,6 +41,7 @@ div>h1 {
     height: 400px;
     border: 1px solid black;
     border-radius: 5px;
+    color: white;
 }
 
 #commands {
@@ -67,23 +75,29 @@ input:focus {
     align-items: center;
 }
 
-width: 700px;
-
 .input-container input {
     flex: 1;
 }
 
 #tree-container {
     display: flex;
-    width: 700px;
+    width: 1000px;
+    padding: 20px 0;
 }
 
 #tree {
-    flex: 1;
+    flex: 2;
+    padding: 20px;
+}
+
+#lists h2,
+#tree h2 {
+    color: #698aac;
 }
 
 #lists {
     flex: 1;
+    padding: 20px;
 }
 
 #tree ul,
@@ -156,4 +170,44 @@ width: 700px;
 
 #command-details div p {
     margin-left: 10px;
+}
+
+#tree [level='0'] {
+    margin: 10px 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#tree [level='0'] lh {
+    color: #485460;
+}
+
+#tree [level='1'] {
+    background-color: #2f3542;
+    margin: 10px 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#tree [level='1'] lh {
+    color: white;
+}
+
+#tree [level='2'] {
+    background-color: #57606f;
+    margin: 10px 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#tree [level='2'] lh {
+    color: white;
+}
+
+#tree li {
+    background-color: #00a8ff;
+    margin: 10px 15px;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
 }
